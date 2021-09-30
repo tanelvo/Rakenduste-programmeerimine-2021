@@ -1,0 +1,13 @@
+.navbar{
+    background-color: #c30303;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+.cart {
+    height:50px;
+    margin: 50px;
+}
+.logo{
+    height: 100px;
+}
