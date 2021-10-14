@@ -2,6 +2,7 @@ import { useState } from "react"
 import './App.css';
 import Fun from './components/Fun';
 import Greeting from './components/Greeting';
+import Homework from "./components/Homework";
 
 function App() {
   const [magicNumber, setMagicNumber] = useState(0)
@@ -30,7 +31,8 @@ function App() {
         show={show}
         setShow={setShow}
       />
-      <Greeting name="Tanel" age="22"/>
+      <Greeting name={"Tanel"} age={"22"} />
+      <Homework dayOfBirth={"21"} month={"06"}/>
     </div>
   );
 }
