@@ -6,8 +6,11 @@
 }
 .cart {
     height:50px;
-    margin: 50px;
+    margin: 40px;
 }
 .logo{
-    height: 100px;
+    height: 90px;
+}
+body{
+    background-color: #e2e2e2;
 }

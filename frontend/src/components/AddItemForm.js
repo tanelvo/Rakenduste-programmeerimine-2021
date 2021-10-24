@@ -22,15 +22,18 @@ function AddItemForm(props){
         props.onAddItem(item);
     }
     return (
-        <form onSubmit={formSubmitHandler}>
-            <label>Eseme nimi:</label><br/>
-            <input type="text" placeholder="Nimi" required ref={nameInputRef}/><br/>
-            <label>Eseme hind:</label><br/>
-            <input type="number" placeholder="Hind" required ref={priceInputRef}/><br/>
-            <label>Eseme kategooria:</label><br/>
-            <input type="text" placeholder="Kategooria" required ref={categoryInputRef}/><br/>
-            <button>Sisesta uus ese</button>
-        </form>
+        <div className="formDiv">
+            <form onSubmit={formSubmitHandler}>
+                <h1>Lisa uus ese</h1>
+                <label>Eseme nimi:</label><br/>
+                <input type="text" placeholder="Nimi" required ref={nameInputRef}/><br/>
+                <label>Eseme hind:</label><br/>
+                <input type="number" placeholder="Hind" required ref={priceInputRef}/><br/>
+                <label>Eseme kategooria:</label><br/>
+                <input type="text" placeholder="Kategooria" required ref={categoryInputRef}/><br/>
+                <button className="formSubmit">Sisesta uus ese</button>
+            </form>
+        </div>
     );
 }
 

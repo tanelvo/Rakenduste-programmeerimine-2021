@@ -1,5 +1,4 @@
 import ItemList from '../components/ItemList';
-import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 function Home(){
@@ -22,13 +21,6 @@ function Home(){
 
     return(
         <div>
-            <Link to="categories">
-                <button>Kategooriad</button>
-            </Link>
-            <br/>
-            <Link to="add-item">
-                <button>Lisa uus ese</button>
-            </Link>
             <ItemList items={loadedItems}/>
         </div>
     )

@@ -1,0 +1,53 @@
+.itemBox {
+    display: grid;
+    grid-gap: 1px;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.item {
+    background-color: rgb(255, 221, 221);
+    width: 300px;
+    height: 130px;
+    border: 5px solid rgb(252, 202, 202);
+    border-radius: 3px;
+    margin-bottom: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 10px;
+}
+
+h4 {
+    text-align: center;
+}
+p {
+    line-height: 0.8;
+    text-indent: 20px;
+    padding-top: 6px;
+}
+
+.itemText {
+    background-color: rgb(223, 143, 143);
+    height: 25px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 3px;
+}
+
+.addItemButton {
+    width: 200px;
+    height: 40px;
+    background-color: rgb(255, 182, 182);
+    border-color: rgba(240, 248, 255, 0);
+    border-radius: 3px;
+    margin-left: 5px;
+}
+.addItemButton:hover {
+    background-color: #eea4a4;
+}
+.links {
+    position: absolute;
+    left: 15%;
+    margin-top:-50px;
+}

@@ -1,9 +1,15 @@
+import './ItemList.css';
 function Item(props){
     return(
-        <div>
-            <div className="itemName">{props.name}</div>
-            <div className="itemPrice">{props.price}</div>
-            <div className="itemCategory">{props.category}</div>
+        <div className="item">
+            <h4 className="itemName">{props.name}</h4>
+            <div className="itemText">
+                <p className="itemPrice">Price: {props.price}</p>
+            </div>
+            <div className="itemText">
+                <p className="itemCategory">Category: {props.category}</p>    
+            </div>
+            
         </div>
     )
 }
