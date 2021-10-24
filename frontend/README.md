@@ -1,3 +1,12 @@
+# Kodutöö 25/10/2021
+
+Siin on minu css-ga loodud kujundus oma lehele: 
+![image](https://user-images.githubusercontent.com/70900278/138608786-384ce14f-ec19-4c5c-9751-a6185d14d752.png)
+
+![image](https://user-images.githubusercontent.com/70900278/138608791-24a0daf3-85d4-42a4-9523-b91e594939d7.png)
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
