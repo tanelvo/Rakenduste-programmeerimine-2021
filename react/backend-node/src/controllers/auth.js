@@ -1,7 +1,6 @@
 const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
 const User = require("../models/user")
-const user = require("../models/user")
 
 exports.login = async (req, res) => {
     const { email, password} = req.body
@@ -40,7 +39,7 @@ exports.signup = async (req, res) => {
     try {
         const user = await User.findOne({ email })
 
-        if(user) throw Error("User with that e-mail already exists")
+        if(user) throw Error("Invalid email")
 
         const salt = await bcrypt.genSalt(10)
         if (!salt) throw Error("Something critical happened #1")
@@ -65,3 +64,9 @@ exports.signup = async (req, res) => {
         res.status(400).json({ error: e.message})
     }
 }
+
+exports.getUsers = async (req, res) => {
+    const users = await User.find({})
+    
+    res.status(200).send(users)
+  }

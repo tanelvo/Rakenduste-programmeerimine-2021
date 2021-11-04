@@ -4,6 +4,7 @@ import { addPost, removePost, updatePosts } from "../store/actions"
 
 function Posts() {
     const [title, setTitle] = useState("")
+    const [author, setAuthor] = useState("")
     const [state, dispatch] = useContext(Context)
     const inputRef = useRef(null);
 
@@ -34,13 +35,16 @@ function Posts() {
         
 
         setTitle("")
+        setAuthor("");
+        addNewPost();
         if (inputRef.current) inputRef.current.focus() // Lisab cursori tagasi input fieldi peale submiti
     }
 
     const addNewPost = () => {
         const newPost = {
             id: Date.now(),
-            title
+            title,
+            author
         }
 
         // Salvestame andmebaasi ja kui on edukas, siis teeme dispatchi ja uuendame state lokaalselt
@@ -51,8 +55,8 @@ function Posts() {
 
     console.log({ inputRef })
     return (
-        <div style={{ textAlign: "center" }}>
-            <h1>Posts</h1>
+        <div id="posts" style={{ textAlign: "center" }}>
+            <h1>Add Post</h1>
             <form onSubmit={handleSubmit}>
                 <input ref={inputRef} type="text" value={title} onChange={e => setTitle(e.target.value)} autoFocus />
                 <button type="submit">Submit</button>

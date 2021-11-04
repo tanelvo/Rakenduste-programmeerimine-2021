@@ -3,10 +3,12 @@ const authController = require("../controllers/auth")
 const validationMiddleware = require("../middleware/validationMiddleware")
 const { check } = require("express-validator")
 
+router.get("/users", authController.getUsers)
 router.post("/login", [
     check("email")
         .isEmail()
         .normalizeEmail()
+        .escape()
         .withMessage("Must be correctly formatted e-mail"),
     check("password")
         .isLength({ min: 6 })
@@ -38,7 +40,9 @@ router.post("/signup", [
     check("password")
         .isLength({ min: 6 })
         .withMessage("Must be at least 6 characters long")
+        .isStrongPassword
 ], validationMiddleware, authController.signup)
+
 
 
 module.exports = router
