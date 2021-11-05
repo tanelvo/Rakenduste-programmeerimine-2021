@@ -31,7 +31,7 @@ function ShowMagic() {
         show={show}
         setShow={setShow}
       />
-      <Greeting name={"Tanel"} age={"22"} />
+      <Greeting name={"Tanel"} age={2} />
       <Homework dayOfBirth={"21"} month={"06"}/>
     </div>
   );

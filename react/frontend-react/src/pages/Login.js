@@ -1,14 +1,34 @@
 import { Form, Input, Button, Checkbox } from 'antd';
-import { useState} from "react"
-function Login() {
+import { useState, useContext } from "react"
+import { loginUser } from '../store/actions';
+import { Context } from '../store';
+
+function Login({userState}) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("")
+    const [state, dispatch] = useContext(Context)
 
-    const LogUserIn = async (user) => {
-        setEmail(user.email)
-        setPassword(user.password)
+    const LogUserIn = async (u) => {
+        setEmail(u.email)
+        setPassword(u.password)
 
-        console.log(user)
+        const user = {
+          email,
+          password
+        }
+        const response = await fetch('http://localhost:8081/api/auth/login', {
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(user),
+          method: 'POST',
+        })
+
+        const data = await response.json()
+        if (data.token) {
+          dispatch(loginUser(data))
+          userState.push("/posts")
+        }
     }
 
 return (
